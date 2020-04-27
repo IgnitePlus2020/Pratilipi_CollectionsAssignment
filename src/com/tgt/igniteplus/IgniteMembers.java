@@ -1,19 +1,16 @@
 package com.tgt.igniteplus;
 
-import java.util.List;
 import java.util.Set;
 
 public class IgniteMembers {
     private String Name;
     private String College;
-    private String Department;
     private Set<String> SkillSet;
     private int Age;
 
-    public IgniteMembers(String name, String college, String department, Set<String> skillSet, int age) {
+    public IgniteMembers(String name, String college, Set<String> skillSet, int age) {
         Name = name;
         College = college;
-        Department = department;
         SkillSet = skillSet;
         Age = age;
     }
@@ -21,12 +18,12 @@ public class IgniteMembers {
     public IgniteMembers() {
     }
 
+
     @Override
     public String toString() {
         return "Ignite Members:\n" +
                 "Name: '" + Name + '\'' +
                 "\tCollege: '" + College + '\'' +
-                "\tDepartment: '" + Department + '\'' +
                 "\tSkillSet: " + SkillSet +
                 "\tAge: " + Age;
     }
@@ -37,10 +34,6 @@ public class IgniteMembers {
 
     public String getCollege() {
         return College;
-    }
-
-    public String getDepartment() {
-        return Department;
     }
 
     public Set<String> getSkillSet() {
@@ -57,10 +50,6 @@ public class IgniteMembers {
 
     public void setCollege(String college) {
         College = college;
-    }
-
-    public void setDepartment(String department) {
-        Department = department;
     }
 
     public void setSkillSet(Set<String> skillSet) {

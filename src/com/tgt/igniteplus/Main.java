@@ -12,101 +12,71 @@ unique attribute is Name)
  */
 package com.tgt.igniteplus;
 
-import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Scanner;
 
 public class Main {
-    static List<IgniteMembers> memberObj = new CopyOnWriteArrayList<>();
-    static List<String> Department = new ArrayList<>();
-    static Set<String> SkillSet = new HashSet<>();
+    static DepartmentMemberManipulation manipulationObj = new DepartmentMemberManipulation();
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int choice;
 
-        Set<String> gauthamSkillSet = new HashSet<>();
-        gauthamSkillSet.add("Java");
-        gauthamSkillSet.add("SQL");
-        gauthamSkillSet.add("DS");
-
-        Set<String> divyaSkillSet = new HashSet<>();
-        divyaSkillSet.add("Java");
-        divyaSkillSet.add("NOSQL");
-        divyaSkillSet.add("ML");
-
-        Set<String> amitSkillSet = new HashSet<>();
-        amitSkillSet.add("Linux");
-        amitSkillSet.add("PSQL");
-        amitSkillSet.add("Scripting");
-
-        Set<String> naveenSkillSet = new HashSet<>();
-        naveenSkillSet.add("Chef");
-        naveenSkillSet.add("React");
-        naveenSkillSet.add("AI");
-
-        Department.add("Data Science");
-        Department.add("Infrastructure");
-
-        memberObj.add(new IgniteMembers("Gautham", "VTU", Department.get(0), gauthamSkillSet, 28));
-        memberObj.add(new IgniteMembers("Divya", "TGT", Department.get(0), divyaSkillSet, 26));
-        memberObj.add(new IgniteMembers("Amit", "TMT", Department.get(1), amitSkillSet, 25));
-        memberObj.add(new IgniteMembers("Naveen", "DOJO", Department.get(1), naveenSkillSet, 22));
-
         do {
-            System.out.println("\n-------------------------------------------------\n" +
+            System.out.println("\n*-------------------------------------------------------------------------------*\n" +
                     "Option Menu:\n" +
                     "1. Display list of Departments\n" +
-                    "2. Create a new Department\n" +
+                    "2. Add a new Department\n" +
                     "3. Delete a Department\n" +
                     "4. Display all Members based on departments\n" +
-                    "5. Create a Member and add to a department\n" +
-                    "6. Display members based on given skill\n" +
+                    "5. Create a Member and add him/her to a department\n" +
+                    "6. Display all members possessing a given skill\n" +
                     "7. Swap department of a member\n" +
-                    "8. Add new skill set to all members of a department\n" +
-                    "-------------------------------------------------");
-            System.out.print("Enter your option:\t");
+                    "8. Add a new skill to the skill set of all members of a department\n" +
+                    "*-------------------------------------------------------------------------------*");
+            System.out.print("\nEnter your option:\t");
             int option = in.nextInt();
 
             switch (option) {
                 case 1:
-                    displayDept();
+                    manipulationObj.displayDepartmentList();
                     break;
 
                 case 2:
-                    String department = createDept();
-                    System.out.println("Now enter a member in this department:");
-                    createMember(department);
+                    manipulationObj.createDepartment();
                     break;
 
                 case 3:
-                    removeDept();
+                    manipulationObj.removeDepartment();
                     break;
 
                 case 4:
-                    displayMemberDeptWise();
+                    manipulationObj.displayMemberDeptWise();
                     break;
 
                 case 5:
-                    createMember(null);
+                    manipulationObj.createMember(null);
                     break;
 
                 case 6:
-                    displayMemberSkillWise();
+                    manipulationObj.displayMemberSkillWise();
                     break;
 
                 case 7:
-                    swapDept();
+                    boolean flag = manipulationObj.swapDept();
+                    if (flag == true)
+                        System.out.println("Swap Successful!");
                     break;
 
                 case 8:
-                    addNewSkill();
+                    manipulationObj.addNewSkill();
                     break;
 
                 default:
-                    System.out.print("Invalid option!\n Enter a valid option:\t");
+                    System.out.print("Invalid Option!\n" +
+                            "Enter a valid option.\n");
             }
 
-            System.out.print("-------------------------------------------------\n" +
+            System.out.print("*-------------------------------------------------------------------------------*\n" +
                     "Do you want to continue? (0/1):\t");
             choice = in.nextInt();
         } while (choice == 1);
@@ -114,66 +84,76 @@ public class Main {
         System.exit(0);
     }
 
-    private static void addNewSkill() {
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+//Method to list the departments
+
+   /* private static void displayDept() {
+        int i = 1;
+        System.out.println("\nDepartments:");
+        for (String deptObj : Department) {
+            System.out.println(i + ". " + deptObj);
+            i++;
+        }
+    }*/
+
+
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+//Method to create a new department
+
+  /*  private static String createDept() {
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter the new skill:\t");
-        String newSkill = in.next();
-        System.out.print("Enter the department choice:\n");
+        System.out.println("\nEnter the name of the department to be added:\t");
+        String newDept = in.next();
+        Department.add(newDept);
+        return newDept;
+    }*/
+
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+//Method to remove a department
+
+/*    private static void removeDept() {
+        Scanner in = new Scanner(System.in);
+        int deptChoice;
+        String deleteDept = null;
+        System.out.println("\nEnter the department to be deleted:\t");
         int j = 1;
         for (String deptObj : Department) {
             System.out.println(j + ". " + deptObj);
             j++;
         }
-        String dept = null;
-        int deptChoice = in.nextInt();
+        deptChoice = in.nextInt();
         int k = 1;
         for (String deptObj : Department) {
             if (k == deptChoice) {
-                dept = deptObj;
+                deleteDept = deptObj;
                 break;
             }
             k++;
         }
-        for (IgniteMembers im : memberObj) {
-            if (im.getDepartment().contains(dept)) {
-                Set<String> skill = im.getSkillSet();
-                skill.add(newSkill);
-                im.setSkillSet(skill);
+        for (IgniteMembers mem : memberObj) {
+            if(mem.getDepartment().contains(deleteDept)) {
+                memberObj.remove(mem);
             }
         }
-        System.out.println("Added!");
-        for (IgniteMembers im : memberObj)
-            if (im.getDepartment().contains(dept))
-                System.out.println("Name:\t" + im.getName() + "\t\t\tSkills:\t" + im.getSkillSet());
-    }
+        Department.remove(deleteDept);
+        System.out.println("Removed!");
+    }*/
 
-    private static void swapDept() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter the name of the member who's department you want to change:\t");
-        String memName = in.next();
-        System.out.println("Enter the choice of department:");
-        int j = 1;
-        for (String deptObj : Department) {
-            System.out.println(j + ". " + deptObj);
-            j++;
-        }
-        String dept = null;
-        int deptChoice = in.nextInt();
-        int k = 1;
-        for (String deptObj : Department) {
-            if (k == deptChoice) {
-                dept = deptObj;
-                break;
-            }
-            k++;
-        }
-        for (IgniteMembers im : memberObj) {
-            if (im.getName().contains(memName))
-                im.setDepartment(dept);
-        }
-    }
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+//Method to display members department wise
 
-    private static void createMember(String deptParam) {
+  /*  private static void displayMemberDeptWise() {
+        System.out.println("\nDEPARTMENT\t\t\t|\t\tMEMBER NAME\n" +
+                "-------------------------------------------------");
+        for (IgniteMembers mem : memberObj) {
+            System.out.println(mem.getDepartment() + "\t\t|\t\t" + mem.getName());
+        }
+    }*/
+
+
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+//Method to create a new member
+   /* private static void createMember(String deptParam) {
         Scanner in = new Scanner(System.in);
         Set<String> SkillSet = new HashSet<>();
         String newName, newCollege;
@@ -223,7 +203,11 @@ public class Main {
         memberObj.add(new IgniteMembers(newName, newCollege, dept, SkillSet, newAge));
         System.out.println("Created!");
     }
+*/
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+//Method to display members skill wise
 
+/*
     private static void displayMemberSkillWise() {
         Scanner in = new Scanner(System.in);
         System.out.println("List of members according to skill:");
@@ -235,68 +219,72 @@ public class Main {
                 System.out.println(im);
         }
     }
+*/
 
-    private static void displayMemberDeptWise() {
-        System.out.println("\nDEPARTMENT\t\t\t|\t\tMEMBER NAME\n" +
-                "-------------------------------------------------");
-        for (IgniteMembers mem : memberObj) {
-            System.out.println(mem.getDepartment() + "\t\t|\t\t" + mem.getName());
-        }
-    }
-
-    private static void removeDept() {
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+//Method to swap departments for a member
+   /* private static void swapDept() {
         Scanner in = new Scanner(System.in);
-        int deptChoice;
-        String deleteDept = null;
-        System.out.println("\nEnter the department to be deleted:\t");
+        System.out.print("Enter the name of the member who's department you want to change:\t");
+        String memName = in.next();
+        System.out.println("Enter the choice of department:");
         int j = 1;
         for (String deptObj : Department) {
             System.out.println(j + ". " + deptObj);
             j++;
         }
-        deptChoice = in.nextInt();
+        String dept = null;
+        int deptChoice = in.nextInt();
         int k = 1;
         for (String deptObj : Department) {
             if (k == deptChoice) {
-                deleteDept = deptObj;
+                dept = deptObj;
                 break;
             }
             k++;
         }
-       /* Iterator<IgniteMembers> iter = memberObj.iterator();
-        List<IgniteMembers> str = new ArrayList<>();
-        while(iter.hasNext()){
-            str = Collections.singletonList(iter.next());
-            if(str.contains(deleteDept)){
-                iter.remove();
-            }
-        }*/
-        for (IgniteMembers mem : memberObj) {
-            if(mem.getDepartment().contains(deleteDept)) {
-                memberObj.remove(mem);
-            }
+        for (IgniteMembers im : memberObj) {
+            if (im.getName().contains(memName))
+                im.setDepartment(dept);
         }
-        Department.remove(deleteDept);
-        System.out.println("Removed!");
-    }
+    }*/
 
-    private static void displayDept() {
-        int i = 1;
-        System.out.println("\nDepartments:");
-        for (String deptObj : Department) {
-            System.out.println(i + ". " + deptObj);
-            i++;
-        }
-    }
-
-    private static String createDept() {
+//------------*---------------*--------------*----------------*----------------*--------------*------------*------------
+// Method to add new skill
+    /*private static void addNewSkill() {
         Scanner in = new Scanner(System.in);
-        System.out.println("\nEnter the name of the department to be added:\t");
-        String newDept = in.next();
-        Department.add(newDept);
-        return newDept;
-    }
+        System.out.print("Enter the new skill:\t");
+        String newSkill = in.next();
+        System.out.print("Enter the department choice:\n");
+        int j = 1;
+        for (String deptObj : Department) {
+            System.out.println(j + ". " + deptObj);
+            j++;
+        }
+        String dept = null;
+        int deptChoice = in.nextInt();
+        int k = 1;
+        for (String deptObj : Department) {
+            if (k == deptChoice) {
+                dept = deptObj;
+                break;
+            }
+            k++;
+        }
+        for (IgniteMembers im : memberObj) {
+            if (im.getDepartment().contains(dept)) {
+                Set<String> skill = im.getSkillSet();
+                skill.add(newSkill);
+                im.setSkillSet(skill);
+            }
+        }
+        System.out.println("Added!");
+        for (IgniteMembers im : memberObj)
+            if (im.getDepartment().contains(dept))
+                System.out.println("Name:\t" + im.getName() + "\t\t\tSkills:\t" + im.getSkillSet());
+    }*/
 }
+
  /*
  Output:
 -------------------------------------------------

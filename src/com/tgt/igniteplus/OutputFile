@@ -1,0 +1,397 @@
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	1
+No departments to display!
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	5
+
+Enter member's name:	John
+Enter member's age:	23
+Enter member's college:	tgt
+Enter member's Skill Set	(Press D/d when done):
+Java
+ML
+d
+
+Add 'John' to one of the departments:
+No departments to display!
+Add one first!
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	2
+
+Enter name of the new department:
+Data Science
+Now add a new member to Data Science
+
+Enter member's name:	Gautham
+Enter member's age:	28
+Enter member's college:	VTU
+Enter member's Skill Set	(Press D/d when done):
+Java
+SQL
+DS
+d
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	2
+
+Enter name of the new department:
+Infrastructure
+Now add a new member to Infrastructure
+
+Enter member's name:	Amit
+Enter member's age:	25
+Enter member's college:	TMT
+Enter member's Skill Set	(Press D/d when done):
+Linux
+PSQL
+Scripting
+d
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	5
+
+Enter member's name:	Divya
+Enter member's age:	26
+Enter member's college:	TGT
+Enter member's Skill Set	(Press D/d when done):
+Java
+NOSQL
+ML
+d
+
+Add 'Divya' to one of the departments:
+
+DEPARTMENTS:
+1.	Data Science
+2.	Infrastructure
+
+Enter your choice:	1
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	5
+
+Enter member's name:	Naveen
+Enter member's age:	22
+Enter member's college:	Chef
+Enter member's Skill Set	(Press D/d when done):
+Chef
+React
+AI
+d
+
+Add 'Naveen' to one of the departments:
+
+DEPARTMENTS:
+1.	Data Science
+2.	Infrastructure
+
+Enter your choice:	2
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	1
+
+DEPARTMENTS:
+1.	Data Science
+2.	Infrastructure
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	4
+
+DEPARTMENT			|		MEMBER NAME
+-------------------------------------------------
+Data Science		|		Gautham
+Data Science		|		Divya
+Infrastructure		|		Amit
+Infrastructure		|		Naveen
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	6
+Enter the skill:	Java
+
+List of members having Java as a skill:
+---------------------------------------------------------
+NAME		|		SKILLSET
+Gautham		|		[, Java, SQL, DS]
+Divya		|		[, Java, NOSQL, ML]
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	8
+Enter the new skill:	HTML
+Choose a department
+
+DEPARTMENTS:
+1.	Data Science
+2.	Infrastructure
+Enter your choice:	1
+
+Name:	Gautham			Skills:	[, Java, HTML, SQL, DS]
+Name:	Divya			Skills:	[, Java, HTML, NOSQL, ML]
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	7
+Enter member's name who's department you want to change:	John
+Member doesn't exist!
+Enter an existing member's name:	Amit
+
+DEPARTMENTS:
+1.	Data Science
+2.	Infrastructure
+Enter your choice of department:
+1
+Swap Successful!
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	4
+
+DEPARTMENT			|		MEMBER NAME
+-------------------------------------------------
+Data Science		|		Gautham
+Data Science		|		Divya
+Data Science		|		Amit
+Infrastructure		|		Naveen
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	7
+Enter member's name who's department you want to change:	Naveen
+
+DEPARTMENTS:
+1.	Data Science
+2.	Infrastructure
+Enter your choice of department:
+1
+Naveen is the only member of the department Infrastructure
+Swap is not possible!
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	3
+
+DEPARTMENTS:
+1.	Data Science
+2.	Infrastructure
+
+Enter your choice:
+2
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	4
+
+DEPARTMENT			|		MEMBER NAME
+-------------------------------------------------
+Data Science		|		Gautham
+Data Science		|		Divya
+Data Science		|		Amit
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	1
+
+*-------------------------------------------------------------------------------*
+Option Menu:
+1. Display list of Departments
+2. Add a new Department
+3. Delete a Department
+4. Display all Members based on departments
+5. Create a Member and add him/her to a department
+6. Display all members possessing a given skill
+7. Swap department of a member
+8. Add a new skill to the skill set of all members of a department
+*-------------------------------------------------------------------------------*
+
+Enter your option:	11
+Invalid Option!
+Enter a valid option.
+*-------------------------------------------------------------------------------*
+Do you want to continue? (0/1):	0
